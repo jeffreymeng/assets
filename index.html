@@ -46,8 +46,11 @@
 
 
             <script>
+            /* global $ Clipboard */
             new Clipboard('.clipboard');
-
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip();
+            });
                 $("#search").keyup(function() {
                     var books = [{
                         id: "bootstrap-v3",
