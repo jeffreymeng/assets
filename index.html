@@ -11,12 +11,19 @@
             <hr>
             <p>This is where I store all the assets I use for most of my github projects</p>
             <h3>Files:</h3>
-            <input class="form-control" id="search">
+
             <div id="projects">
-                <ul class="list-group">
+                 <input class="search form-control" placeholder="Search" />
+                  <button class="sort btn btn-primary" data-sort="name">
+                    Sort by Name
+                  </button>
+                  <button class="sort btn btn-primary" data-sort="name">
+                    Sort by Name
+                  </button>
+                <ul class="list-group list">
                     <li class="list-group-item">
                         <div class="input-group">
-                            <span class="input-group-addon">Bootstrap Version 3.3.6 JS(<a href="https://getbootstrap.com">Website</a> | <a href="bootstrap/docs">docs</a>):</span>
+                            <span class="input-group-addon" ><span class="name">Bootstrap Version 3.3.6</span> <span class="type">JS</span>(<a href="https://getbootstrap.com">Website</a> | <a href="bootstrap/docs">docs</a>):</span>
                             <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>' id="bootstrap-336-code">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" class="clipboard"  data-clipboard-target="#bootstrap-336-code"><img height="20" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
@@ -36,10 +43,15 @@
 
 
             <script>
-                /* global $ Clipboard bootstrapClipboardHelperInit */
+                /* global $ Clipboard bootstrapClipboardHelperInit List */
 
                 var clipboard = new Clipboard(".clipboard");
                 bootstrapClipboardHelperInit(clipboard);
+                var options = {
+                  valueNames: [ 'name', 'type' ]
+                };
+                
+                var userList = new List('projects', options);
             </script>
         </div>
     </div>
