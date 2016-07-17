@@ -48,30 +48,12 @@
 
 
             <script>
-            /* global $ */
+            /* global $ Clipboard bootstrapClipboardHelperInit */
             if  (window.location.hash !== null) {
                 $(window.location.hash).collapse('show');
             }
-
-                $("#search").keyup(function() {
-                    var books = [{
-                        id: "bootstrap-v3",
-                        name: 'bootstrap',
-                        version: '3.3.6'
-                    }];
-
-                    var options = {
-                        keys: ['name', 'version'], // keys to search in
-                        id: 'id' // return a list of identifiers only
-                    }
-                    var f = new Fuse(books, options);
-                    var result = f.search($("#search.val")); // Fuzzy-search for pattern 'brwn'
-                    console.log(result);
-
-                    for (i = 0; i < result.length; i++) {
-                        $("#" + result[i]).show()
-                    }
-                });
+            var clipboard = new Clipboard(".clipboard");
+                bootstrapClipboardHelperInit(clipboard);
             </script>
         </div>
     </div>
