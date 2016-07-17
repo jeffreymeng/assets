@@ -37,6 +37,7 @@ After Error, says Press CMD(⌘) + C to copy OR Press CTRL + C to copy OR Copyin
 */
 function bootstrapClipboardHelperInit(clipboard) {
     function showTooltip(text, id) {
+        $("#" + id).tooltip("destroy");
         $("#" + id).attr("title", text);
         $("#" + id).tooltip("show");
         setTimeout(function(){$("#" + id).tooltip("hide");}, 3000)

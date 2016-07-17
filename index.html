@@ -26,7 +26,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>' id="bootstrap-336-code">
                                         <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" data-toggle="tooltip" data-placement="top" title="Copy To Clipboard"><img height="20" class="clipboard" data-clipboard-target="#bootstrap-336-code" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                                        <button class="btn btn-default" type="button"><img height="20" class="clipboard" data-clipboard-target="#bootstrap-336-code" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
                                       </span>
                                     </div>
                                     <!-- /input-group -->
@@ -43,27 +43,13 @@
             <script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>
             <script src="https://assets.jeffkmeng.com/fuse/v2/js/fuse.min.js"></script>
             <script src="https://assets.jeffkmeng.com/clipboard/v1/js/clipboard.min.js"></script>
+            <script src="https://assets.jeffkmeng.com/clipboard/v1/js/bootstrap-clipboard-helper.min.js"></script>
 
 
             <script>
-            /* global $ Clipboard */
-            var clipboard = new Clipboard('.clipboard');
 
-clipboard.on('success', function(e) {
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-    alert($(e.trigger).parent().attr("title"));
-
-    e.clearSelection();
-});
-
-clipboard.on('error', function(e) {
-    console.error('Action:', e.action);
-    console.error('Trigger:', e.trigger);
-});
             $(function () {
-              $('[data-toggle="tooltip"]').tooltip();
+              $('[data-toggle="tooltip"]').tooltip({title:"copy to clipboard"});
             });
                 $("#search").keyup(function() {
                     var books = [{
