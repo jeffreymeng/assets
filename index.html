@@ -11,61 +11,58 @@
             <hr>
             <p>This is where I store all the assets I use for most of my github projects</p>
             <h3>Files:</h3>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>
-                            Name
-                        </th>
-                        <th>
-                            Website
-                        </th>
+            <input class="form-control" id="search">
+            <div id="projects">
+            <div class="panel-group" id="bootstrap" data-version="3.3.6`">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Bootstrap Version 3.3.6 | <a href="https://getbootstrap.com">getbootstrap.com</a> | <a href="bootstrap/docs/">Local Docs</a></a>
+        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <ul class="list-group">
+                            <li class="list-group-item">One</li>
+                            <li class="list-group-item">Two</li>
+                            <li class="list-group-item">Three</li>
+                        </ul>
 
-                        <th>
-                            Snippet
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="noresults">
-                        <td colspan="3" id="noresults">No Results</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Bootstrap JS version
-                        </td>
-                        <td>
-                            <a href="https://getbootstrap.com">getbootstrap.com</a> | <a href="bootstrap/docs/">Local Docs</a>
-                        </td>
-                        <td>
-                            &lt;script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js">&lt;/script>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            [CONTENT]
-                        </td>
-                        <td>
-                            [CONTENT]
-                        </td>
-                        <td>
-                            [CONTENT]
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    </div>
+                </div>
+            </div>
+</div>
             <script src="https://assets.jeffkmeng.com/jquery/v2/js/jquery.min.js"></script>
             <script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>
             <script src="https://assets.jeffkmeng.com/quicksearch/v1/js/jquery.quicksearch.min.js"></script>
 
 
             <script>
-                $("#search").quicksearch("table tbody tr", {
-                    noResults: '#noresults',
-                    //stripeRows: ['odd', 'even'],
-                    //loader: 'span.loading',
-                    minValLength: 2
-                });
+            //calculates edit distance between two strings
+var levenstein = function(a, b) {
+    b = b + "";
+    var m = [], i, j, min = Math.min;
+
+    if (!(a && b)) return (b || a).length;
+
+    for (i = 0; i <= b.length; m[i] = [i++]);
+    for (j = 0; j <= a.length; m[0][j] = j++);
+
+    for (i = 1; i <= b.length; i++) {
+        for (j = 1; j <= a.length; j++) {
+            m[i][j] = b.charAt(i - 1) == a.charAt(j - 1)
+                ? m[i - 1][j - 1]
+                : m[i][j] = min(
+                    m[i - 1][j - 1] + 1, 
+                    min(m[i][j - 1] + 1, m[i - 1 ][j] + 1));
+        }
+    }
+
+    return m[b.length][a.length];
+};
+                $("#projects > div.panel-group")
+                .show().filter(function(index) {
+                        return (levenstein($(this).attr("id"), $("#search").val()) < (Math.round($(this).attr("id").length / 4) + 0.49))
+                    }).hide();
             </script>
         </div>
     </div>
