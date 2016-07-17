@@ -1,3 +1,55 @@
 <h1>Jeffrey Assets</h1>
 <hr>
 <p>This is where I store all the assets i use for most of my github projects</p>
+<h3>Files:</h3>
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Website
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="noresults">
+			<td colspan="3" id="noresults">No Results</td>
+		</tr>
+        <tr>
+            <td>
+                Bootstrap JS version 
+            </td>
+            <td>
+                ty
+            </td>
+            <td>
+                [CONTENT]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                [CONTENT]
+            </td>
+            <td>
+                [CONTENT]
+            </td>
+            <td>
+                [CONTENT]
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script src="https://assets.jeffkmeng.com/bootstrap/v3.min.js"></script>
+<script>
+    $("#search").quicksearch("table tbody tr", {
+        noResults: '#noresults',
+        //stripeRows: ['odd', 'even'],
+        //loader: 'span.loading',
+        minValLength: 2
+    });
+</script>
