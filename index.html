@@ -24,7 +24,7 @@
                             <ul class="list-group">
                                 <li class="list-group-item">
                                     <div class="input-group">
-                                        <span class="input-group-addon">JS:</span>
+                                        <span class="input-group-addon"><a href="https://getbootstrap.com">Bootstrap Version 3.3.6</a> JS(<a href="bootstrap/docs">docs</a>):</span>
                                         <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>' id="bootstrap-336-code">
                                         <span class="input-group-btn">
                                         <button class="btn btn-default" type="button"><img height="20" class="clipboard" data-clipboard-target="#bootstrap-336-code" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
@@ -49,9 +49,7 @@
 
             <script>
             /* global $ Clipboard bootstrapClipboardHelperInit */
-            if  (window.location.hash !== null) {
-                $(window.location.hash).collapse('show');
-            }
+
             var clipboard = new Clipboard(".clipboard");
                 bootstrapClipboardHelperInit(clipboard);
             </script>
