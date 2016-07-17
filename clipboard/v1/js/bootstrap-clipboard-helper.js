@@ -51,7 +51,7 @@ function bootstrapClipboardHelperInit(clipboard) {
         console.info('Action:', e.action);
         console.info('Text:', e.text);
         console.info('Trigger:', e.trigger);
-        alert($(e.trigger).parent().attr("is"));
+        alert($(e.trigger).parent().attr("id"));
 
         e.clearSelection();
     });

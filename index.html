@@ -13,32 +13,20 @@
             <h3>Files:</h3>
             <input class="form-control" id="search">
             <div id="projects">
-                <div class="panel-group bootstrap" id="bootstrap-336" data-version="3.3.6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" href="#collapse1">Bootstrap Version 3.3.6(toggle snippets)</a> | <a href="https://getbootstrap.com">getbootstrap.com</a> | <a href="bootstrap/docs/">Local Docs</a>
-                            </h4>
-                        </div>
-                        <div id="collapse1" class="panel-collapse collapse">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><a href="https://getbootstrap.com">Bootstrap Version 3.3.6</a> JS(<a href="bootstrap/docs">docs</a>):</span>
-                                        <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>' id="bootstrap-336-code">
-                                        <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><img height="20" class="clipboard" data-clipboard-target="#bootstrap-336-code" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon"><a href="https://getbootstrap.com">Bootstrap Version 3.3.6</a> JS(<a href="bootstrap/docs">docs</a>):</span>
+                            <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>' id="bootstrap-336-code">
+                            <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" class="clipboard"  data-clipboard-target="#bootstrap-336-code"><img height="20" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
                                       </span>
-                                    </div>
-                                    <!-- /input-group -->
-                                </li>
-                                <li class="list-group-item">Two</li>
-                                <li class="list-group-item">Three</li>
-                            </ul>
-
                         </div>
-                    </div>
-                </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li class="list-group-item">Two</li>
+                    <li class="list-group-item">Three</li>
+                </ul>
             </div>
             <script src="https://assets.jeffkmeng.com/jquery/v2/js/jquery.min.js"></script>
             <script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>
@@ -48,9 +36,9 @@
 
 
             <script>
-            /* global $ Clipboard bootstrapClipboardHelperInit */
+                /* global $ Clipboard bootstrapClipboardHelperInit */
 
-            var clipboard = new Clipboard(".clipboard");
+                var clipboard = new Clipboard(".clipboard");
                 bootstrapClipboardHelperInit(clipboard);
             </script>
         </div>
