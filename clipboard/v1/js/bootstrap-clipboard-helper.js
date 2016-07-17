@@ -37,10 +37,10 @@ After Error, says Press CMD(⌘) + C to copy OR Press CTRL + C to copy OR Copyin
 */
 function bootstrapClipboardHelperInit(clipboard) {
     function showTooltip(text, id) {
-        $("#" + id).tooltip("destroy");
-        $("#" + id).attr("title", text);
+        
+        $("#" + id).tooltip({title:text});
         $("#" + id).tooltip("show");
-        setTimeout(function(){$("#" + id).tooltip("hide");}, 3000)
+        setTimeout(function(){$("#" + id).tooltip("hide");$("#" + id).tooltip("destroy");}, 3000)
         
     }
     var platform = (navigator.platform.match(/(Mac)/i) ? true : false) ? "mac" : ((navigator.platform.match(/(iPhone|iPod|iPad)/i) ? true : false) ? "ios" : "windows");
