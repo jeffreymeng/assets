@@ -26,7 +26,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search for..." id="bootstrap-3.3.6-code">
                                         <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><img height="20" data-clipboard-target="#bootstrap-3.3.6-code" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                                        <button class="btn btn-default" type="button"><img height="20" class="clipboard" data-clipboard-target="#bootstrap-3.3.6-code" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
                                       </span>
                                     </div>
                                     <!-- /input-group -->
@@ -46,6 +46,8 @@
 
 
             <script>
+            new Clipboard('.clipboard');
+
                 $("#search").keyup(function() {
                     var books = [{
                         id: "bootstrap-v3",
