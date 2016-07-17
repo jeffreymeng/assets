@@ -48,7 +48,10 @@
 
 
             <script>
-
+            /* global $ */
+            if  (window.location.hash !== null) {
+                $(window.location.hash).collapse('show');
+            }
             $(function () {
               $('[data-toggle="tooltip"]').tooltip({title:"copy to clipboard"});
             });
@@ -56,14 +59,11 @@
                     var books = [{
                         id: "bootstrap-v3",
                         name: 'bootstrap',
-                        version: '3.3.6',
-                        css: "css",
-                        js: "js"
-
+                        version: '3.3.6'
                     }];
 
                     var options = {
-                        keys: ['name', 'version', "css", "js"], // keys to search in
+                        keys: ['name', 'version'], // keys to search in
                         id: 'id' // return a list of identifiers only
                     }
                     var f = new Fuse(books, options);
