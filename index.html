@@ -1,61 +1,74 @@
-<link href="https://assets.jeffkmeng.com/jquery/v2/js/jquery.min.js" rel="stylesheet" type="text/css">
-<h1>Jeffrey Assets</h1>
-<hr>
-<p>This is where I store all the assets i use for most of my github projects</p>
-<h3>Files:</h3>
-<table class="table table-hover table-responsive">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Website
-            </th>
+<html>
 
-            <th>
-                Snippet
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr id="noresults">
-			<td colspan="3" id="noresults">No Results</td>
-		</tr>
-        <tr>
-            <td>
-                Bootstrap JS version 
-            </td>
-            <td>
-                <a href="https://getbootstrap.com">getbootstrap.com</a> | <a href="bootstrap/docs/">Local Docs</a>
-            </td>
-            <td>
-                &lt;script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js">&lt;/script>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                [CONTENT]
-            </td>
-            <td>
-                [CONTENT]
-            </td>
-            <td>
-                [CONTENT]
-            </td>
-        </tr>
-    </tbody>
-</table>
-<script src="https://assets.jeffkmeng.com/jquery/v2/js/jquery.min.js"></script>
-<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>
-<script src="https://assets.jeffkmeng.com/quicksearch/v1/js/jquery.quicksearch.min.js"></script>
+<head>
+    <link href="https://assets.jeffkmeng.com/jquery/v2/js/jquery.min.js" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="col-lg-12">
+        <div class="container">
+            <h1>Jeffrey Assets</h1>
+            <hr>
+            <p>This is where I store all the assets i use for most of my github projects</p>
+            <h3>Files:</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Website
+                        </th>
+
+                        <th>
+                            Snippet
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="noresults">
+                        <td colspan="3" id="noresults">No Results</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Bootstrap JS version
+                        </td>
+                        <td>
+                            <a href="https://getbootstrap.com">getbootstrap.com</a> | <a href="bootstrap/docs/">Local Docs</a>
+                        </td>
+                        <td>
+                            &lt;script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js">&lt;/script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            [CONTENT]
+                        </td>
+                        <td>
+                            [CONTENT]
+                        </td>
+                        <td>
+                            [CONTENT]
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <script src="https://assets.jeffkmeng.com/jquery/v2/js/jquery.min.js"></script>
+            <script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>
+            <script src="https://assets.jeffkmeng.com/quicksearch/v1/js/jquery.quicksearch.min.js"></script>
 
 
-<script>
-    $("#search").quicksearch("table tbody tr", {
-        noResults: '#noresults',
-        //stripeRows: ['odd', 'even'],
-        //loader: 'span.loading',
-        minValLength: 2
-    });
-</script>
+            <script>
+                $("#search").quicksearch("table tbody tr", {
+                    noResults: '#noresults',
+                    //stripeRows: ['odd', 'even'],
+                    //loader: 'span.loading',
+                    minValLength: 2
+                });
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
