@@ -51,20 +51,18 @@ function bootstrapClipboardHelperInit(clipboard) {
         console.info('Action:', e.action);
         console.info('Text:', e.text);
         console.info('Trigger:', e.trigger);
-        alert($(e.trigger).parent().attr("id"));
-
+        var id = $(e.trigger).parent().attr("id");
+        alert(id);
+        showTooltip(success, id)
         e.clearSelection();
     });
 
     clipboard.on('error', function(e) {
         console.error('Action:', e.action);
         console.error('Trigger:', e.trigger);
+        var id = $(e.trigger).parent().attr("id");
+        alert(id);
+        showTooltip(error, id)
     });
 
-    function showTooltip(text) {
-        setTimeout(
-            function() {
-
-            }, 3000);
-    }
 }
