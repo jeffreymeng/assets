@@ -46,6 +46,7 @@ function bootstrapClipboardHelperInit(clipboard) {
     var platform = (navigator.platform.match(/(Mac)/i) ? true : false) ? "mac" : ((navigator.platform.match(/(iPhone|iPod|iPad)/i) ? true : false) ? "ios" : "windows");
     var error = navigator !== "ios" ? ("Press " + (navigator === "mac" ? "CMD(⌘)" : "CTRL") + " + C to copy") : "Copying Unvaliable on IOS";
     var success = "copied!";
+     console.log(platform)
     console.log(error)
     clipboard.on('success', function(e) {
         //console.info('Action:', e.action);
