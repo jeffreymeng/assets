@@ -30,15 +30,6 @@
                 <ul class="list-group list">
                     <li class="list-group-item">
                         <div class="input-group">
-                            <span class="input-group-addon" ><span class="name">NAME <span class="version">VERSION</span></span> <span class="type">TYPE(JS OR CSS OR OTHER)</span>(<a href="WEBSITE">Website</a> | <a href="LOCAL DOCS LINK">docs</a>):</span>
-                            <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/FILEPATH"></script>' id="NAME-VERSION-TYPE-code">
-                            <span class="input-group-btn" id="NAME-VERSION-TYPE-clip">
-                                <button class="btn btn-default clipboard-btn" type="button"  data-clipboard-target="NAME-VERSION-TYPE-code"><img height="20" src="https://assets.jeffkmeng.com/clipboard/v1/svg/clipboard.svg" alt="Copy To Clipboard"></button>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="input-group">
                             <span class="input-group-addon" ><span class="name">Bootstrap Version 3.3.6</span> <span class="type">JS</span>(<a href="https://getbootstrap.com">Website</a> | <a href="bootstrap/docs">docs</a>):</span>
                             <input type="text" class="form-control" value='<script src="https://assets.jeffkmeng.com/bootstrap/v3/js/bootstrap.min.js"></script>' id="bootstrap-336-js-code">
                             <span class="input-group-btn" id="bootstrap-336-js-clip">
@@ -84,18 +75,8 @@
                 var options = {
                   valueNames: [ 'name', 'type' ]
                 };
-                var options = {
-                  valueNames: [
-                    'name',
-                    'born',
-                    { data: ['id'] },
-                    { attr: 'src', name: 'image' },
-                    { attr: 'href', name: 'link' },
-                    { attr: 'data-timestamp', name: 'timestamp' }
-                  ]
-                };
+
                 var userList = new List('projects', options);
-                userList.add({});
 
             </script>
         </div>
