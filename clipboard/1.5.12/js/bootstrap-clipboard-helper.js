@@ -48,20 +48,20 @@ function bootstrapClipboardHelperInit(clipboard) {
     var success = "copied!";
     
     clipboard.on('success', function(e) {
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
+        //console.info('Action:', e.action);
+        //console.info('Text:', e.text);
+        //console.info('Trigger:', e.trigger);
         var id = $(e.trigger).parent().attr("id");
-        alert(id);
+        //alert(id);
         showTooltip(success, id)
         e.clearSelection();
     });
 
     clipboard.on('error', function(e) {
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
+        //console.error('Action:', e.action);
+        //console.error('Trigger:', e.trigger);
         var id = $(e.trigger).parent().attr("id");
-        alert(id);
+        //alert(id);
         showTooltip(error, id)
     });
 
