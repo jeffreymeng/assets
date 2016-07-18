@@ -22,12 +22,7 @@
                 <button class="sort btn btn-primary" data-sort="name">
                     Sort by type
                   </button>
-                  <div class="radio-inline">
-  <label><input type="radio" name="optradio" checked onclick="$('.both').attr('value', ($('.both').attr('value').replace('.js', '.min.js').replace('.css', '.min.css).replace('.svg', '.min.svg')))">Show Production Files</label>
-</div>
-<div class="radio-inline">
-  <label><input type="radio" name="optradio" onclick="$('.both').attr('value', ($('.both').attr('value').replace('.min.', '.')))">Show Dev Files</label>
-</div>
+
                 <hr>
 
 
@@ -136,7 +131,7 @@
                     </li>
                     <li class="list-group-item">
                         <div class="input-group">
-                            <span class="input-group-addon"><span class="name">FuseJS Version 2.3.0</span> <span class="type">JS</span>(<a href="https://jquery.com">Website</a> | <a href="#" class="text-muted disabled">Local Docs Currently Not Avaliable</a>):</span>
+                            <span class="input-group-addon"><span class="name">FuseJS Version 2.3.0</span> <span class="type">JS</span>(<a href="http://kiro.me/projects/fuse.html">Website</a> | <a href="#" class="text-muted disabled">Local Docs Currently Not Avaliable</a>):</span>
                             <input type="text" class="form-control code" value='<script src="https://assets.jeffkmeng.com/fuse/2.3.0/js/fuse.min.js"></script>' id="fuse-230-js-code">
                             <span class="input-group-btn" id="fuse-230-js-clip">
                                 <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#fuse-230-js-code"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
@@ -144,7 +139,27 @@
                         </div>
                         <!-- /input-group -->
                     </li>
-                    
+                    <li class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="name">QRIOUS Version 1.1.4</span> <span class="type">JS</span>(<a href="https://jquery.com">Website</a> | <a href="#" class="text-muted disabled">Local Docs Currently Not Avaliable</a>):</span>
+                            <input type="text" class="form-control code" value='<script src="https://assets.jeffkmeng.com/qrious/1.1.4/js/qrious.min.js"></script>' id="qrious-114-js-code">
+                            <span class="input-group-btn" id="qrious-114-js-clip">
+                                <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#qrious-114-js-code"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="name">QRIOUS Version 2.0.1</span> <span class="type">JS</span>(<a href="https://jquery.com">Website</a> | <a href="#" class="text-muted disabled">Local Docs Currently Not Avaliable</a>):</span>
+                            <input type="text" class="form-control code" value='<script src="https://assets.jeffkmeng.com/qrious/2.0.1/js/qrious.min.js"></script>' id="qrious-201-js-code">
+                            <span class="input-group-btn" id="qrious-201-js-clip">
+                                <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#qrious-201-js-code"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+
                 </ul>
                 <ul class="pagination-bottom pagination"></ul>
             </div>
@@ -158,40 +173,39 @@
 
 
             <script>
-                /* global Clipboard bootstrapClipboardHelperInit List ListFuzzySearch ListPagination */
-                
-                var clipboard = new Clipboard(".clipboard-btn");
-                bootstrapClipboardHelperInit(clipboard);
+                                /* global Clipboard bootstrapClipboardHelperInit List ListFuzzySearch ListPagination */
 
-                var fuzzyOptions = {
-                    searchClass: "fuzzy-search",
-                    location: 0,
-                    distance: 100,
-                    threshold: 0.4,
-                    multiSearch: true
-                };
-                var paginationTopOptions = {
-                    name: "pagination-top",
-                    paginationClass: "pagination-top",
-                    outerWindow: 2
-                };
-                var paginationBottomOptions = {
-                    name: "pagination-bottom",
-                    paginationClass: "pagination-bottom",
-                    innerWindow: 3,
-                    left: 2,
-                    right: 4
-                };
-                var options = {
-                    valueNames: ['name', 'type'],
-                    page:7,
-                    plugins: [
-                        ListFuzzySearch(fuzzyOptions),
-                        ListPagination(paginationTopOptions),
-                        ListPagination(paginationBottomOptions)
-                    ]
-                };
-                var list = new List('projects', options);
+                                var clipboard = new Clipboard(".clipboard-btn"); bootstrapClipboardHelperInit(clipboard);
+
+                                var fuzzyOptions = {
+                                    searchClass: "fuzzy-search",
+                                    location: 0,
+                                    distance: 100,
+                                    threshold: 0.4,
+                                    multiSearch: true
+                                };
+                                var paginationTopOptions = {
+                                    name: "pagination-top",
+                                    paginationClass: "pagination-top",
+                                    outerWindow: 2
+                                };
+                                var paginationBottomOptions = {
+                                    name: "pagination-bottom",
+                                    paginationClass: "pagination-bottom",
+                                    innerWindow: 3,
+                                    left: 2,
+                                    right: 4
+                                };
+                                var options = {
+                                    valueNames: ['name', 'type'],
+                                    page: 7,
+                                    plugins: [
+                                        ListFuzzySearch(fuzzyOptions),
+                                        ListPagination(paginationTopOptions),
+                                        ListPagination(paginationBottomOptions)
+                                    ]
+                                };
+                                var list = new List('projects', options);
             </script>
         </div>
     </div>

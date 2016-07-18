@@ -1,0 +1,14 @@
+        <script>
+                var converter = new showdown.Converter()
+
+        $.ajax({
+  url: getQuery("url") || "#file not found\nYou should not have directly accessed this page. Instead you should have been redirected here\nif you were, please contact the owner of the page you were redirected from.",
+  success: function(text){
+    $("#markdown").html(converter.makeHtml(text))
+  },
+  dataType: "text"
+});
+
+
+    
+        </script>
