@@ -11,12 +11,11 @@
 var cbpAnimatedHeader = (function() {
 
 	var docElem = document.documentElement,
-		header = document.querySelector( '.cbp-af-header' ),
+		header = document.querySelector( '.navbar-default' ),
 		didScroll = false,
 		changeHeaderOn = 300;
 
 	function init() {
-		scrollPage();
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;
@@ -28,10 +27,10 @@ var cbpAnimatedHeader = (function() {
 	function scrollPage() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
-			classie.add( header, 'cbp-af-header-shrink' );
+			classie.add( header, 'navbar-shrink' );
 		}
 		else {
-			classie.remove( header, 'cbp-af-header-shrink' );
+			classie.remove( header, 'navbar-shrink' );
 		}
 		didScroll = false;
 	}
