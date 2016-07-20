@@ -869,3 +869,8 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #fed136;
 }
+/* end of bootstrap theme. */
+.hidden {
+    display:none;
+    visibility:hidden;
+}
