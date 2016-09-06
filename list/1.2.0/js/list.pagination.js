@@ -512,6 +512,11 @@ module.exports = function(options) {
     var addEvent = function(elm, i, page) {
        events.bind(elm, 'click', function() {
            list.show((i-1)*page + 1, page);
+          if (window.location.search !== "" && window.location.search !== null) {
+            window.location.search = window.location.search + "&page=" + (i-1)*page;
+          } else {
+            window.location.search = "page=" + (i-1)*page;
+          }
        });
     };
 
