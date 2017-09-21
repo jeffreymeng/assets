@@ -14,12 +14,18 @@
 <body>
     <div class="container">
         <div class="col-lg-12">
+            <br>
             <h1>Jeffrey Assets - jQuery</h1>
             <nav class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <span class="breadcrumb-item active">jQuery</span>
             </nav>
-            <h1>Jquery</h1>
+            <p><i>Click on a link to copy it to your clipboard</i></p>
+            <a name="3.2.1"></a>
+            <h1>Version 3.2.1</h1>
+            <a class="clip">
+    https://assets.jeffkmeng.com/3.2.1/js/jquery.js
+</a>
 
 
 
@@ -29,6 +35,11 @@
     <script src="/jquery/3.0.0/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="/clipboardjs/1.7.1/js/clipboard.js"></script>
+    <script>
+        
+        $(".clip").each("data-clipboard-text", $(".clip-"))
+    </script>
 </body>
 
 </html>
