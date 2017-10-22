@@ -35,9 +35,9 @@
     <script src="/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="/clipboardjs/1.7.1/js/clipboard.js"></script>
     <script>
-        new Clipboard('.clip', {
+        var clipboard = new Clipboard('.clip', {
             text: function(trigger) {
-                console.log(trigger)
+                console.log(trigger);
                 return $("#" + trigger.getAttribute('id')).html();
             }
         });
