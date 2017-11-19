@@ -8,7 +8,45 @@
     <meta name="author" content="Jeffrey Meng">
     <link rel="stylesheet" type="text/css" href="/bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <title>Jeffrey Assets</title>
+    <style>
+        /* https://stackoverflow.com/a/3525675/5511561 */
 
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        .container {
+            min-height: 100%;
+            height: auto !important;
+            margin-bottom: -50px;
+            /* the bottom margin is the negative value of the footer's total height */
+        }
+
+        .container:after {
+            content: "";
+            display: block;
+            height: 50px;
+            /* the footer's total height */
+        }
+
+
+
+        .footer {
+            height: 50px;
+            /* the footer's total height */
+        }
+
+        .footer-content {
+
+            height: 32px;
+            /* height + top/bottom paddding + top/bottom border must add up to footer height */
+            padding: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +58,7 @@
             <nav class="breadcrumb">
                 <span class="breadcrumb-item active">Home</span>
             </nav>
-            
+
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -31,25 +69,25 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="/bootstrap/">Bootstrap</a></td>
+                        <td><a href="/library/bootstrap/">Bootstrap</a></td>
                         <td>CSS framefork</td>
-                        <td><a href="/bootstrap/#4.0.0-beta">4.0.0-beta</a>, <a href="/bootstrap/#3.3.6">3.3.6</a></td>
+                        <td><a href="/library/bootstrap/#4.0.0-beta">4.0.0-beta</a>, <a href="/library/bootstrap/#3.3.6">3.3.6</a></td>
                     </tr>
                     <tr>
-                        <td><a href="/jquery/">jQuery</a></td>
+                        <td><a href="/library/jquery/">jQuery</a></td>
                         <td>Javascript Library</td>
-                        <td><a href="/jquery/#v3.2.1">3.2.1</a>, <a href="/jquery/#migrate-3.0.0">migrate-3.0.0</a>, 
-                        <a href="/jquery/#v2.2.4">2.2.4</a></td>
+                        <td><a href="/library/jquery/#v3.2.1">3.2.1</a>, <a href="/library/jquery/#migrate-3.0.0">migrate-3.0.0</a>,
+                            <a href="/library/jquery/#v2.2.4">2.2.4</a></td>
                     </tr>
                     <tr>
-                        <td><a href="/clipboardjs/">Clipboard.js</a></td>
+                        <td><a href="/library/clipboardjs/">Clipboard.js</a></td>
                         <td>Javascript Library</td>
-                        <td><a href="/clipboardjs/#v1.7.1">1.7.1</a></td>
+                        <td><a href="/library/clipboardjs/#v1.7.1">1.7.1</a></td>
                     </tr>
                     <tr>
-                        <td><a href="/clipboardjs/">Popper.js</a></td>
+                        <td><a href="/library/popperjs/">Popper.js</a></td>
                         <td>Javascript Library</td>
-                        <td><a href="/popperjs/#v1.12.6">1.12.6</a></td>
+                        <td><a href="/library/popperjs/#v1.12.6">1.12.6</a></td>
                     </tr>
 
                 </tbody>
@@ -58,6 +96,12 @@
 
 
 
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content text-center">
+            Copyright &copy; 2017 Jeffrey Meng<br>
+            Looking for the old(v1) site and old library compatibility? You can find them <a href="/v1/">here</a>.
         </div>
     </div>
     <script src="/jquery/3.2.1/js/jquery.min.js"></script>

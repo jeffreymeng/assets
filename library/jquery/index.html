@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jeffrey Meng">
+	<link rel="stylesheet" type="text/css" href="/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<title>Jeffrey Archives</title>
+	<style>
+		/*
+    .link utility class to imitate bootstrap links without href attribute
+    */
+
+		.link {
+
+			color: #007bff;
+			text-decoration: none;
+			background-color: transparent;
+			-webkit-text-decoration-skip: objects;
+
+		}
+
+		.link:hover {
+
+			color: #0056b3;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="col-lg-12">
+			<br>
+			<h1>Jeffrey Assets - jQuery</h1>
+			<nav class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<span class="breadcrumb-item active">jQuery</span>
+			</nav>
+			<p><i>Click on a link to copy it to your clipboard</i></p>
+			<a name="3.2.1"></a>
+			<h3>Version 3.2.1</h3>
+			<a class="clip" data-clipboard-target="#link-321-js" id="link-321-js" href="#">https://assets.jeffkmeng.com/3.2.1/js/jquery.js</a><br>
+			<a class="clip" data-clipboard-target="#link-321-min" id="link-321-min" href="#">https://assets.jeffkmeng.com/3.2.1/js/jquery.min.js</a><br>
+			<a name="3.2.1"></a>
+			<h3>Version migrate-3.0.0</h3>
+			<a class="clip" data-clipboard-target="#link-migrate-300-js" id="link-migrate-300-js" href="#">https://assets.jeffkmeng.com/migrate-3.0.0/js/jquery-migrate.js</a><br>
+			<a class="clip" data-clipboard-target="#link-migrate-300-min" id="link-migrate-300-min" href="#">https://assets.jeffkmeng.com/migrate-3.0.0/js/jquery-migrate.min.js</a><br>
+			<a name="3.2.1"></a>
+			<h3>Version 2.2.4</h3>
+			<a class="clip" data-clipboard-target="#link-224-js" id="link-224-js" href="#">https://assets.jeffkmeng.com/2.2.4/js/jquery.js</a><br>
+			<a class="clip" data-clipboard-target="#link-224-min" id="link-224-min" href="#">https://assets.jeffkmeng.com/2.2.4/js/jquery.min.js</a><br>
+
+
+
+
+		</div>
+	</div>
+	<script src="/jquery/3.2.1/js/jquery.min.js"></script>
+	<script src="/popperjs/1.12.6/js/popper.min.js"></script>
+	<script src="/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<script src="/clipboardjs/1.7.1/js/clipboard.min.js"></script>
+	<script>
+		var clipboard = new Clipboard('.clip');
+		//Tooltips below
+		initTooltip(clipboard);
+
+		$(".clip").each(function(i) {
+			//data-toggle="tooltip" title="Hooray!"
+			$(this).attr("data-toggle", "toolip");
+			$(this).attr("title", "Copy to clipboard");
+			$('[data-toggle="tooltip"]').tooltip();
+		})
+		var btns = document.querySelectorAll('.btn');
+
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].addEventListener('mouseleave', clearTooltip);
+			btns[i].addEventListener('blur', clearTooltip);
+		}
+
+		function clearTooltip(e) {
+			e.tooltip('dispose');
+
+		}
+
+		function showTooltip(elem, msg) {
+			elem.tooltip({ title: msg });
+			elem.tooltip("show");
+		}
+
+		function fallbackMessage(action) {
+			var actionMsg = '';
+			var actionKey = (action === 'cut' ? 'X' : 'C');
+
+			if (/iPhone|iPad/i.test(navigator.userAgent)) {
+				actionMsg = 'No clipboard support. Sorry!';
+			}
+			else if (/Mac/i.test(navigator.userAgent)) {
+				actionMsg = 'Press Cmd-' + actionKey + ' to ' + action;
+			}
+			else {
+				actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+			}
+
+			return actionMsg;
+		}
+		clipboardDemos.on('success', function(e) {
+			e.clearSelection();
+
+			console.info('Action:', e.action);
+			console.info('Text:', e.text);
+			console.info('Trigger:', e.trigger);
+
+			showTooltip(e.trigger, 'Copied!');
+		});
+
+		clipboardDemos.on('error', function(e) {
+			console.error('Action:', e.action);
+			console.error('Trigger:', e.trigger);
+
+			showTooltip(e.trigger, fallbackMessage(e.action));
+		});
+	</script>
+</body>
+
+</html>
