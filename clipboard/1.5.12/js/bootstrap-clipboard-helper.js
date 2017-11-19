@@ -25,10 +25,10 @@ Shows tooltips for Copy To Clipboard, Copied!, and press CMD/CTRL C to copy
 DOCS:
 run bootstrapClipboardHelperInit(clipboard) to initate.
 PARAMS:
-clipboard: the object returned by new Clipboard.
+clipboard: an Clipboard instance from ClipboardJs
 
 EX:
-var clipboard = new CLipboard(".btn");
+var clipboard = new Clipboard(".btn");
 bootstrapClipboardHelperInit(clipboard);
 
 RESULT:
