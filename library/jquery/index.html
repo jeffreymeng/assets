@@ -76,12 +76,12 @@
 
 
 		function clearTooltip(e) {
-			e.currentTarget.setAttribute("class", "btn");
+			e.currentTarget.setAttribute("class", "link");
 			e.currentTarget.removeAttribute("aria-label");
 		}
 
 		function showTooltip(elem, msg) {
-			elem.setAttribute("class", "btn tooltipped tooltipped-s");
+			elem.setAttribute("class", "link tooltipped tooltipped-s");
 			elem.setAttribute("aria-label", msg);
 		}
 
