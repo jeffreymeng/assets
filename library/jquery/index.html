@@ -70,6 +70,7 @@
 			}
 		});
 		$(".link").each(function () {
+			$(this).setAttribute("data-toggle", "tooltip")
 			$(this).on("mouseleave", clearTooltip);
 			$(this).on("blur", clearTooltip);
 		});
@@ -81,11 +82,11 @@
 		}
 
 		function showTooltip(elem, msg) {
-			elem.setAttribute("class", "link tooltipped tooltipped-s");
-			elem.setAttribute("aria-label", msg);
+			
+			elem.setAttribute("data-title", msg);
+			elem.tooltip("show");
 		}
 
-		// Simplistic detection, do not use it in production
 		function fallbackMessage(action) {
 			var actionMsg = "";
 			var actionKey = (action === "cut" ? "X" : "C");
