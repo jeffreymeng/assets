@@ -70,7 +70,7 @@
 			}
 		});
 		$(".link").each(function () {
-			$(this).setAttribute("data-toggle", "tooltip")
+			$(this).attr("data-toggle", "tooltip")
 			$(this).on("mouseleave", clearTooltip);
 			$(this).on("blur", clearTooltip);
 		});
