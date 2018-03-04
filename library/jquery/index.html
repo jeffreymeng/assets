@@ -55,11 +55,12 @@
 	<script src="/jquery/3.2.1/js/jquery.min.js"></script>
 	<script src="/popperjs/1.12.6/js/popper.min.js"></script>
 	<script src="/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-	<script src="/clipboard/1.7.1/js/clipboard.min.js"></script>
+	<script src="/js/clipboard.min.js"></script>
 	<script>
 		new ClipboardJS('.link', {
 			target: function(trigger) {
-				return trigger.nextElementSibling;
+				console.log(trigger);
+				return trigger;
 			}
 		});
 
