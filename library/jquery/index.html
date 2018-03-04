@@ -43,7 +43,7 @@
 			<hr>
 			<a name="v3"></a>
 			<h3>v3</h3>
-			<b>v3.3.1</b>:<a class="link">https://cdn.jeffkmeng.com/jquery/3.3.1/jquery.min.js</a>
+			<b>v3.3.1</b>:<a class="link" href="#3.3.1">https://cdn.jeffkmeng.com/jquery/3.3.1/jquery.min.js</a>
 
 			
 
@@ -57,66 +57,14 @@
 	<script src="/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 	<script src="/clipboard/1.7.1/js/clipboard.min.js"></script>
 	<script>
-		var clipboard = new Clipboard('.link');
-		//Tooltips below
-		//initTooltip(clipboard);
-
-		$(".link").each(function(i) {
-			//data-toggle="tooltip" title="Hooray!"
-			$(this).attr("data-toggle", "toolip");
-			$(this).attr("title", "Copy to clipboard");
-			$('[data-toggle="tooltip"]').tooltip();
-		})
-		var btns = document.querySelectorAll('.btn');
-
-		for (var i = 0; i < btns.length; i++) {
-			btns[i].addEventListener('mouseleave', clearTooltip);
-			btns[i].addEventListener('blur', clearTooltip);
-		}
-
-		function clearTooltip(e) {
-			e.tooltip('dispose');
-
-		}
-
-		function showTooltip(elem, msg) {
-			elem.tooltip({ title: msg });
-			elem.tooltip("show");
-		}
-
-		function fallbackMessage(action) {
-			var actionMsg = '';
-			var actionKey = (action === 'cut' ? 'X' : 'C');
-
-			if (/iPhone|iPad/i.test(navigator.userAgent)) {
-				actionMsg = 'No clipboard support. Sorry!';
+		new ClipboardJS('.link', {
+			target: function(trigger) {
+				return trigger.nextElementSibling;
 			}
-			else if (/Mac/i.test(navigator.userAgent)) {
-				actionMsg = 'Press Cmd-' + actionKey + ' to ' + action;
-			}
-			else {
-				actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
-			}
-
-			return actionMsg;
-		}
-		clipboard.on('success', function(e) {
-			e.clearSelection();
-
-			console.info('Action:', e.action);
-			console.info('Text:', e.text);
-			console.info('Trigger:', e.trigger);
-
-			showTooltip(e.trigger, 'Copied!');
 		});
 
-		clipboard.on('error', function(e) {
-			console.error('Action:', e.action);
-			console.error('Trigger:', e.trigger);
-
-			showTooltip(e.trigger, fallbackMessage(e.action));
-		});
 	</script>
+		
 </body>
 
 </html>
