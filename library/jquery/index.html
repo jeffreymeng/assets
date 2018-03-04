@@ -36,16 +36,22 @@
 			<br>
 			<h1>Jeffrey Assets - jQuery</h1>
 			<nav class="breadcrumb">
-				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<li class="breadcrumb-item">
+					<a href="/">Home</a>
+				</li>
 				<span class="breadcrumb-item active">jQuery</span>
 			</nav>
-			<p><a href="https://jquery.com">Website</a> | <a href="http://api.jquery.com/">docs</a></p>
+			<p>
+				<a href="https://jquery.com">Website</a> |
+				<a href="http://api.jquery.com/">docs</a>
+			</p>
 			<hr>
 			<a name="v3"></a>
 			<h3>v3</h3>
-			<b>v3.3.1</b>:<a class="link" href="#3.3.1">https://cdn.jeffkmeng.com/jquery/3.3.1/jquery.min.js</a>
+			<b>v3.3.1</b>:
+			<a class="link" href="#3.3.1">https://cdn.jeffkmeng.com/jquery/3.3.1/jquery.min.js</a>
 
-			
+
 
 
 
@@ -57,15 +63,57 @@
 	<script src="/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 	<script src="/js/clipboard.min.js"></script>
 	<script>
-		new ClipboardJS('.link', {
-			target: function(trigger) {
-				console.log(trigger);
+		var clipboard = new ClipboardJS('.link', {
+			target: function (trigger) {
+				//console.log(trigger);
 				return trigger;
 			}
 		});
+		$(".link").each(function () {
+			$(this).on('mouseleave', clearTooltip);
+			$(this).on('blur', clearTooltip);
+		});
+
+
+		function clearTooltip(e) {
+			e.currentTarget.setAttribute('class', 'btn');
+			e.currentTarget.removeAttribute('aria-label');
+		}
+
+		function showTooltip(elem, msg) {
+			elem.setAttribute('class', 'btn tooltipped tooltipped-s');
+			elem.setAttribute('aria-label', msg);
+		}
+
+		// Simplistic detection, do not use it in production
+		function fallbackMessage(action) {
+			var actionMsg = '';
+			var actionKey = (action === 'cut' ? 'X' : 'C');
+
+			if (/iPhone|iPad/i.test(navigator.userAgent)) {
+				actionMsg = 'No support :(';
+			}
+			else if (/Mac/i.test(navigator.userAgent)) {
+				actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+			}
+			else {
+				actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+			}
+
+			return actionMsg;
+		}
+		clipboard.on('success', function (e) {
+			e.clearSelection();
+
+			showTooltip(e.trigger, 'Copied!');
+		});
+
+		clipboard.on('error', function (e) {
+			showTooltip(e.trigger, fallbackMessage(e.action));
+		});
 
 	</script>
-		
+
 </body>
 
 </html>
