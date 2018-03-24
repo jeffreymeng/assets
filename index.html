@@ -396,11 +396,14 @@
         var list = new List('libraries', options);
         var current = 0;
         $(".next").click(function(){
-           
-            list.show((perPage * current), (perPage * current) + perPage);
+            var next = current + perPage;
+
+            list.show(current, next);
         });
         $(".prev").click(function(){
-            list.show((perPage * current), (perPage * current) + perPage);
+            var last = current - perPage;
+
+            list.show(current, last);
         });
     </script>
 </body>
