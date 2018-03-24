@@ -63,11 +63,11 @@
 
                 <input class="fuzzy-search form-control" placeholder="Search" />
 
-                <div class="btn-group" role="group" aria-label="Basic example">
+                <div class="btn-group" role="group" aria-label="sort">
                     <button class="sort btn btn-primary" data-sort="name">
                         Sort by name
                     </button>
-                    <button class="sort btn btn-primary" data-sort="yupe">
+                    <button class="sort btn btn-primary" data-sort="type">
                         Sort by type
                     </button>
                 </div>
@@ -387,6 +387,7 @@
     <script>
         var options = {
             valueNames: ['name', 'type'],
+            page:7,
             pagination: [{
                 name: "pagination-top",
                 paginationClass: "pagination-top",
