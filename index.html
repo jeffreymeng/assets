@@ -400,9 +400,11 @@
                 $(".next")
             }
             list.show(current, current + perPage);
+            current += perPage;
         });
         $(".prev").click(function(){
             list.show(current - perPage, current);
+            current -= perPage;
         });
     </script>
 </body>
