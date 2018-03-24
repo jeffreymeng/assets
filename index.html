@@ -62,7 +62,7 @@
             <div id="libraries">
 
                 <input class="fuzzy-search form-control" placeholder="Search" />
-
+                <br>
                 <div class="btn-group" role="group" aria-label="sort">
                     <button class="sort btn btn-primary" data-sort="name">
                         Sort by name
@@ -75,7 +75,7 @@
                 <hr>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pagination-top">
-                        <!--<li class="page-item">
+                        <li class="page-item prev">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
@@ -90,12 +90,12 @@
                         <li class="page-item">
                             <a class="page-link" href="#">3</a>
                         </li>
-                        <li class="page-item">
+                        <li class="page-item next">
                             <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Next</span>
                             </a>
-                        </li>-->
+                        </li>
                     </ul>
                 </nav>
                 <table class="table table-hover">
@@ -341,27 +341,27 @@
                 </table>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pagination-bottom">
-                        <!--<li class="page-item">
+                        <li class="page-item prev">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">1</a>
+                            <a class="page-link" href="#1">1</a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">2</a>
+                            <a class="page-link" href="#2">2</a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">3</a>
+                            <a class="page-link" href="#3">3</a>
                         </li>
-                        <li class="page-item">
+                        <li class="page-item next">
                             <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Next</span>
                             </a>
-                        </li>-->
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -385,25 +385,23 @@
     <script src="https://cdn.jeffkmeng.com/list/1.5.0/list.min.js"></script>
 
     <script>
+        var perPage = 7;
         var options = {
             valueNames: ['name', 'type'],
-            page:7,
-            pagination: [{
-                name: "pagination-top",
-                paginationClass: "pagination-top",
-                outerWindow: 2,
-                left: 1,
-                right: 2
-            }, {
-                paginationClass: "pagination-bottom",
-                innerWindow: 3,
-                left: 2,
-                right: 4
-            }]
+            page:perPage
+
 
         };
 
-        var userList = new List('libraries', options);
+        var list = new List('libraries', options);
+        var current = 0;
+        $(".next").click(function(){
+           
+            list.show((perPage * current), (perPage * current) + perPage);
+        });
+        $(".prev").click(function(){
+            list.show((perPage * current), (perPage * current) + perPage);
+        });
     </script>
 </body>
 
