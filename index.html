@@ -385,17 +385,25 @@
     <script src="https://cdn.jeffkmeng.com/list/1.5.0/list.min.js"></script>
 
     <script>
-        var perPage = 1;
+        var perPage = 7;
         var options = {
             valueNames: ['name', 'type'],
-            page:perPage,
+            page:perPage
 
 
         };
 
         var list = new List('libraries', options);
-        var currentel = 1;
-
+        var current = 0;
+        $(".next").click(function(){
+            if (current == list.size) {
+                $(".next")
+            }
+            list.show(current, current + perPage);
+        });
+        $(".prev").click(function(){
+            list.show(current - perPage, current);
+        });
     </script>
 </body>
 
