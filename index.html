@@ -388,6 +388,7 @@
         });
         console.log(list.size(), perPage, list.size()/perPage, Math.ceil(list.size() / perPage));
         for (i = 0; i < Math.ceil(list.size() / perPage); i++) {
+            console.log(i);
             var el = $(`
                 <li class="page-item">
                     <a class="page-link" href="#${i + ""}>1</a>
