@@ -403,8 +403,8 @@
         });
         $(window).on("hashchange", function () {
             if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() / perPage)) {
-                console.log(parseInt(window.location.hash.substring(1) - 1) * (perPage - 1), perPage);
-                list.show(parseInt(window.location.hash.substring(1) - 1) * (perPage - 1), perPage);
+                console.log(parseInt(window.location.hash.substring(1) - 1) * (perPage), perPage);
+                list.show(parseInt(window.location.hash.substring(1) - 1) * (perPage), perPage);
 
             } else {
                 list.show(0, perPage);
