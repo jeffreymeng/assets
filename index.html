@@ -386,6 +386,7 @@
 
             window.location.hash = current;
         });
+        console.log(list.size(), perPage, list.size()/perPage, Math.ceil(list.size() / perPage));
         for (i = 0; i < Math.ceil(list.size() / perPage); i++) {
             var el = $(`
                 <li class="page-item">
