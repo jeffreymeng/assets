@@ -82,13 +82,13 @@
                             </a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">1</a>
+                            <a class="page-link" href="#1">1</a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">2</a>
+                            <a class="page-link" href="#2">2</a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#">3</a>
+                            <a class="page-link" href="#3">3</a>
                         </li>
                         <li class="page-item next">
                             <a class="page-link" href="#" aria-label="Next">
@@ -400,6 +400,11 @@
             current -= perPage;
 
             list.show(current, perPage);
+        });
+        $( window ).on( "hashchange", function( e ) {
+            if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() /perPage)) {
+                list.show(parseInt(window.location.hash.substring(1) * (perPage - 1), parseInt(window.location.hash.substring(1) * (perPage)));
+            }
         });
     </script>
 </body>
