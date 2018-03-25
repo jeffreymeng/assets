@@ -81,15 +81,7 @@
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#1">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#2">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#3">3</a>
-                        </li>
+                        
                         <li class="page-item next">
                             <a class="page-link" href="javascript:void(0);" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
@@ -127,7 +119,7 @@
                                 <a href="/library/jquery/#migrate-3.0.0">migrate-3.0.0</a>,
                                 <a href="/library/jquery/#v2.2.4">2.2.4</a>
                             </td>
-                            
+
                         </tr>
                         <tr>
                             <td>
@@ -348,15 +340,7 @@
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#1">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#2">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#3">3</a>
-                        </li>
+                        
                         <li class="page-item next">
                             <a class="page-link" href="javascript:void(0);" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
@@ -393,15 +377,24 @@
         var list = new List('libraries', options);
         var current = 0;
         $(".next").click(function () {
-            current ++;
+            current++;
 
             window.location.hash = current;
         });
         $(".prev").click(function () {
-            current --;
+            current--;
 
             window.location.hash = current;
         });
+        for (i = 0; i < Math.ceil(list.size() / perPage); i++) {
+            var el = $(`
+                <li class="page-item">
+                    <a class="page-link" href="#${i + ""}>1</a>
+                </li>
+            `);
+            el.insertBefore(".pagination-top .next");
+            el.insertBefore(".pagination-bottom .next");
+        }
         $(window).on("hashchange", function () {
             if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() / perPage)) {
                 console.log(parseInt(window.location.hash.substring(1) - 1) * (perPage), perPage);
