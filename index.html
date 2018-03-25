@@ -401,9 +401,13 @@
 
             list.show(current, perPage);
         });
-        $( window ).on( "hashchange", function( e ) {
-            if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() /perPage)) {
-                list.show(parseInt(window.location.hash.substring(1) * (perPage - 1), parseInt(window.location.hash.substring(1) * (perPage)));
+        $(window).on("hashchange", function () {
+            if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() / perPage)) {
+
+                list.show(parseInt(window.location.hash.substring(1)) * (perPage - 1), parseInt(window.location.hash.substring(1)) * (perPage));
+
+            } else {
+                list.show(0, perPage)
             }
         });
     </script>
