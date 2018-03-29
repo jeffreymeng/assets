@@ -43,7 +43,7 @@ function showTooltip(elem, msg) {
             trigger: "hover",
             title: "Copy to clipboard"
         });
-    }, 3000)
+    }, 1000)
 }
 
 function fallbackMessage(action) {
