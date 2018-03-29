@@ -227,12 +227,10 @@
 		});
 
 		$(".link").each(function () {
-			$(this).attr("data-toggle", "tooltip")
-			$(this).attr("data-trigger", "hover")
-			$(this).attr("title", "Copy to clipboard")
-			$(this).on("mouseleave", clearTooltip);
-			$(this).on("blur", clearTooltip);
-			$(this).tooltip()
+			$(this).tooltip({
+				trigger:"hover",
+				title:"Copy to clipboard"
+			});
 		});
 
 
@@ -254,7 +252,9 @@
 			console.log("showTooltip");
 			console.log($(elem));
 			console.log(elem);
-			$(elem).attr("title", msg);
+			$(elem).tooltip({
+				title:msg
+			});
 			$(elem).tooltip("show");
 		}
 
