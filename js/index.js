@@ -4,14 +4,17 @@ var clipboard = new ClipboardJS(".link", {
         return trigger;
     }
 });
+
 $(".link").each(function () {
     $(this).attr("data-toggle", "tooltip")
     $(this).on("mouseleave", clearTooltip);
     $(this).on("blur", clearTooltip);
+    $(this).tooltip()
 });
 
 
 function clearTooltip(e) {
+    console.log(e.currentTarget);
     e.currentTarget.setAttribute("class", "link");
     e.currentTarget.removeAttribute("aria-label");
 }
