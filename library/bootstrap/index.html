@@ -252,6 +252,7 @@
 			console.log("showTooltip");
 			console.log($(elem));
 			console.log(elem);
+			$(elem).tooltip("dispose");
 			$(elem).tooltip({
 				title:msg
 			});
