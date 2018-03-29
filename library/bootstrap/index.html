@@ -228,6 +228,7 @@
 
 		$(".link").each(function () {
 			$(this).attr("data-toggle", "tooltip")
+			$(this).attr("title", "Copy to clipboard")
 			$(this).on("mouseleave", clearTooltip);
 			$(this).on("blur", clearTooltip);
 			$(this).tooltip()
@@ -238,6 +239,12 @@
 			console.log(e.currentTarget);
 			$(e.currentTarget).attr("class", "link");
 			$(e.currentTarget).removeAttr("aria-label");
+
+			$(this).attr("data-toggle", "tooltip")
+			$(this).attr("title", "Copy to clipboard")
+			$(this).on("mouseleave", clearTooltip);
+			$(this).on("blur", clearTooltip);
+			$(this).tooltip()
 		}
 
 		function showTooltip(elem, msg) {
