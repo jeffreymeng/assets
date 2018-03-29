@@ -228,8 +228,8 @@
 
 		$(".link").each(function () {
 			$(this).tooltip({
-				trigger:"hover",
-				title:"Copy to clipboard"
+				trigger: "hover",
+				title: "Copy to clipboard"
 			});
 		});
 
@@ -254,9 +254,17 @@
 			console.log(elem);
 			$(elem).tooltip("dispose");
 			$(elem).tooltip({
-				title:msg
+				title: msg
 			});
 			$(elem).tooltip("show");
+			setTimeout(function () {
+				$(elem).tooltip("hide");
+				$(elem).tooltip("dispose");
+				$(this).tooltip({
+					trigger: "hover",
+					title: "Copy to clipboard"
+				});
+			}, 3000)
 		}
 
 		function fallbackMessage(action) {
