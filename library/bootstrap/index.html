@@ -254,8 +254,8 @@
 			console.log("showTooltip");
 			console.log($(elem));
 			console.log(elem);
-			$(elem)[0].attr("data-title", msg);
-			$(elem)[0].tooltip("show");
+			$(elem).attr("title", msg);
+			$(elem).tooltip("show");
 		}
 
 		function fallbackMessage(action) {
