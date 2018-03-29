@@ -6,23 +6,44 @@ var clipboard = new ClipboardJS(".link", {
 });
 
 $(".link").each(function () {
-    $(this).attr("data-toggle", "tooltip")
-    $(this).on("mouseleave", clearTooltip);
-    $(this).on("blur", clearTooltip);
-    $(this).tooltip()
+    $(this).tooltip({
+        trigger: "hover",
+        title: "Copy to clipboard"
+    });
 });
 
 
 function clearTooltip(e) {
     console.log(e.currentTarget);
-    $(e.currentTarget).attr("class", "link");
-    $(e.currentTarget).removeAttr("aria-label");
+    $(e.currentTarget).tooltip("hide");
+    //$(e.currentTarget).removeAttr("aria-label");
+    /*
+    $(this).attr("data-toggle", "tooltip")
+    $(this).attr("data-trigger", "hover")
+    $(this).attr("title", "Copy to clipboard")
+    $(this).on("mouseleave", clearTooltip);
+    $(this).on("blur", clearTooltip);
+    $(this).tooltip()
+    */
 }
 
 function showTooltip(elem, msg) {
-
-    $(elem).attr("data-title", msg);
+    console.log("showTooltip");
+    console.log($(elem));
+    console.log(elem);
+    $(elem).tooltip("dispose");
+    $(elem).tooltip({
+        title: msg
+    });
     $(elem).tooltip("show");
+    setTimeout(function () {
+        $(elem).tooltip("hide");
+        $(elem).tooltip("dispose");
+        $(elem).tooltip({
+            trigger: "hover",
+            title: "Copy to clipboard"
+        });
+    }, 3000)
 }
 
 function fallbackMessage(action) {
@@ -42,6 +63,7 @@ function fallbackMessage(action) {
     return actionMsg;
 }
 clipboard.on("success", function (e) {
+    console.log("success")
     e.clearSelection();
 
     showTooltip(e.trigger, "Copied!");
