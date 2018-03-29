@@ -15,14 +15,14 @@ $(".link").each(function () {
 
 function clearTooltip(e) {
     console.log(e.currentTarget);
-    e.currentTarget.setAttribute("class", "link");
-    e.currentTarget.removeAttribute("aria-label");
+    $(e.currentTarget).attr("class", "link");
+    $(e.currentTarget).removeAttribute("aria-label");
 }
 
 function showTooltip(elem, msg) {
 
-    elem.attr("data-title", msg);
-    elem.tooltip("show");
+    $(elem).attr("data-title", msg);
+    $(elem).tooltip("show");
 }
 
 function fallbackMessage(action) {
