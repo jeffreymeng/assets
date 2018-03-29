@@ -241,6 +241,7 @@
 		}
 
 		function showTooltip(elem, msg) {
+			console.log("showTooltip");
 			console.log($(elem));
 			$(elem).attr("data-title", msg);
 			$(elem).tooltip("show");
@@ -263,6 +264,7 @@
 			return actionMsg;
 		}
 		clipboard.on("success", function (e) {
+			console.log("success")
 			e.clearSelection();
 
 			showTooltip(e.trigger, "Copied!");
