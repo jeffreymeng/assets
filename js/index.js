@@ -16,7 +16,7 @@ $(".link").each(function () {
 function clearTooltip(e) {
     console.log(e.currentTarget);
     $(e.currentTarget).attr("class", "link");
-    $(e.currentTarget).removeAttribute("aria-label");
+    $(e.currentTarget).removeAttr("aria-label");
 }
 
 function showTooltip(elem, msg) {
