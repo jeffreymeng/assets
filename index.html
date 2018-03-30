@@ -193,6 +193,11 @@
         $(".next").click(function () {
             if (current >= Math.ceil(list.size() / perPage)) {
                 $(".next").attr("disabled", "")
+                $(".next").addClass("disabled")
+            } else if (current < Math.ceil(list.size() / perPage)) {
+                $(".next").removeAttr("disabled", "")
+                $(".next").removeClass("disabled")
+                //TODO add modifier to onhashchange
             }
             if (current > Math.ceil(list.size() / perPage)) {
                 return;
@@ -204,7 +209,8 @@
         });
         $(".prev").click(function () {
             if (current <= 0) {
-                $(".prev").attr("disabled", "")
+                $(".prev").attr("disabled", "disabled")
+                $(".prev").addClass("disabled")
 
             }
             if (current < 0) {
