@@ -200,7 +200,7 @@
 
             current++;
 
-            window.location.hash = current;
+            window.location.hash = current + 1;
         });
         $(".prev").click(function () {
             if (current <= 0) {
@@ -212,7 +212,7 @@
             }
             current--;
 
-            window.location.hash = current;
+            window.location.hash = current + 1;
         });
         console.log(list.size(), perPage, list.size() / perPage, Math.ceil(list.size() / perPage));
         var prev =
@@ -248,7 +248,7 @@
         $(".pagination-bottom").append(next);
 
         $(window).on("hashchange", function () {
-            if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() / perPage)) {
+            if (parseInt(window.location.hash.substring(1)) - 1 > 0 && parseInt(window.location.hash.substring(1)) - 1 < Math.ceil(list.size() / perPage)) {
                 console.log(parseInt(window.location.hash.substring(1) - 1) * (perPage), perPage);
                 list.show(parseInt(window.location.hash.substring(1) - 1) * (perPage), perPage);
 
