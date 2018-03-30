@@ -191,34 +191,10 @@
         var list = new List('libraries', options);
         var current = 0;
         $(".next").click(function () {
-            if (current >= Math.ceil(list.size() / perPage)) {
-                $(".next").attr("disabled", "")
-                $(".next").addClass("disabled")
-            } else if (current < Math.ceil(list.size() / perPage)) {
-                $(".next").removeAttr("disabled", "")
-                $(".next").removeClass("disabled")
-                //TODO add modifier to onhashchange
-            }
-            if (current > Math.ceil(list.size() / perPage)) {
-                return;
-            }
-
-            current++;
-
-            window.location.hash = current + 1;
+            $(this).attr(href, "#" + (current + 1))
         });
         $(".prev").click(function () {
-            if (current <= 0) {
-                $(".prev").attr("disabled", "disabled")
-                $(".prev").addClass("disabled")
-
-            }
-            if (current < 0) {
-                return;
-            }
-            current--;
-
-            window.location.hash = current + 1;
+            $(this).attr(href, "#" + (current + 1))
         });
         console.log(list.size(), perPage, list.size() / perPage, Math.ceil(list.size() / perPage));
         var prev =
@@ -261,6 +237,8 @@
             } else {
                 list.show(0, perPage);
             }
+            $(".next").attr(href, "#" + (current + 1))
+            $(".prev").attr(href, "#" + (current + 1))
         });
     </script>
 </body>
