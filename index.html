@@ -191,11 +191,20 @@
         var list = new List('libraries', options);
         var current = 0;
         $(".next").click(function () {
+            if (current > Math.ceil(list.size() / perPage)) {
+                $(".next").attr("disabled", "")
+                return;
+            }
+                
             current++;
 
             window.location.hash = current;
         });
         $(".prev").click(function () {
+            if (current < 0) {
+                $(".prev").attr("disabled", "")
+                return;
+            }
             current--;
 
             window.location.hash = current;
