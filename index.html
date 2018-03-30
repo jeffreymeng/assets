@@ -253,7 +253,16 @@
         var options = {
             valueNames: ['name', 'type'],
             page: perPage,
-            pagination: true
+            pagination: [{
+      name: "pagination-top",
+      paginationClass: "pagination-top",
+      outerWindow: 2,
+      innerWindow:2
+    }, {//bottom is longer and more comprehensive
+      paginationClass: "pagination-bottom",
+      outerWindow: 3,
+      innerWindow:3
+    }]
 
         };
 
