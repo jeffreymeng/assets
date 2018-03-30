@@ -81,7 +81,7 @@
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
-                        
+
                         <li class="page-item next">
                             <a class="page-link" href="javascript:void(0);" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
@@ -148,6 +148,7 @@
                                 <a href="/library/zxcvbn/#v4.4.2">4.4.2</a>
                             </td>
                         </tr>
+
                         <tr>
                             <td>
                                 <a href="/library/list/" class="name">List</a>
@@ -157,7 +158,16 @@
                                 <a href="/library/list/#v1.5.0">1.5.0</a>
                             </td>
                         </tr>
-                        
+                        <tr>
+                            <td>
+                                <a href="/library/prism/" class="name">Prism</a>
+                            </td>
+                            <td class="type">Javascript Library with CSS</td>
+                            <td>
+                                <a href="/library/prism/#v1.13.0">1.13.0</a>
+                            </td>
+                        </tr>
+
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation example">
@@ -168,7 +178,7 @@
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
-                        
+
                         <li class="page-item next">
                             <a class="page-link" href="javascript:void(0);" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
@@ -214,16 +224,16 @@
 
             window.location.hash = current;
         });
-        console.log(list.size(), perPage, list.size()/perPage, Math.ceil(list.size() / perPage));
+        console.log(list.size(), perPage, list.size() / perPage, Math.ceil(list.size() / perPage));
         for (i = 0; i < Math.ceil(list.size() / perPage); i++) {
             console.log(i);
-            var el = $(`
+            var el = `
                 <li class="page-item">
                     <a class="page-link" href="#${i + ""}>1</a>
                 </li>
-            `);
-            el.insertBefore(".pagination-top .next");
-            el.insertBefore(".pagination-bottom .next");
+            `;
+            $(".pagination-top .next").before(el);
+            $(".pagination-bottom .next").before(el);
         }
         $(window).on("hashchange", function () {
             if (parseInt(window.location.hash.substring(1)) > 0 && parseInt(window.location.hash.substring(1)) < Math.ceil(list.size() / perPage)) {
