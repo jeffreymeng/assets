@@ -191,18 +191,23 @@
         var list = new List('libraries', options);
         var current = 0;
         $(".next").click(function () {
-            if (current > Math.ceil(list.size() / perPage)) {
+            if (current >= Math.ceil(list.size() / perPage)) {
                 $(".next").attr("disabled", "")
+            }
+            if (current > Math.ceil(list.size() / perPage)) {
                 return;
             }
-                
+
             current++;
 
             window.location.hash = current;
         });
         $(".prev").click(function () {
-            if (current < 0) {
+            if (current <= 0) {
                 $(".prev").attr("disabled", "")
+
+            }
+            if (current < 0) {
                 return;
             }
             current--;
@@ -210,16 +215,16 @@
             window.location.hash = current;
         });
         console.log(list.size(), perPage, list.size() / perPage, Math.ceil(list.size() / perPage));
-        var prev = 
-        `<li class="page-item prev">
+        var prev =
+            `<li class="page-item prev">
             <a class="page-link" href="javascript:void(0);" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Previous</span>
             </a>
         </li>`
 
-        var next = 
-        `<li class="page-item next">
+        var next =
+            `<li class="page-item next">
             <a class="page-link" href="javascript:void(0);" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
