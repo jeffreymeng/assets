@@ -268,11 +268,11 @@
 
         var list = new List('libraries', options);
         function addBootstrapClasses() {
-            $('.pagination li').addClass('page-item');
             $('.pagination li a').addClass('page-link');
 
         }
         $(".pagination").bind("DOMNodeInserted", addBootstrapClasses);
+        addBootstrapClasses();
     </script>
 </body>
 
