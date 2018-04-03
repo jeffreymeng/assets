@@ -43,9 +43,13 @@
 			</nav>
 			<p>
 				<a href="https://prismjs.com" target="_blank">Website & Docs</a>
-				
+
 			</p>
 			<hr>
+			<div class="alert alert-info" role="alert">
+				Due to the nature of prism.js you may need to follow the guide at the bottom of this page to select the best file to use
+				and learn how to include it.
+			</div>
 			<div class="major-block">
 				<a name="v1"></a>
 				<h3>v1</h3>
@@ -59,7 +63,7 @@
 
 						<a name="v1.0.0-template.min.js"></a>
 						<span class="version">
-							<a class="link" href="#v1.0.0-template.min.js">https://cdn.jeffkmeng.com/template/1.0.0/template.min.js</a>
+							<a class="link" href="#v1.0.0-template.min.js">https://cdn.jeffkmeng.com/prism/1.13.0/template.min.js</a>
 							<span class="badge badge-success">production</span>
 							<span class="badge badge-primary">map</span>
 						</span>
@@ -76,6 +80,12 @@
 
 					</p>
 				</div>
+			</div>
+			<hr>
+			<div class="instructions">
+				<p>Autoloader: by default we set the resource url to the cdn.jeffkmeng.com link for that version of prism.js, but if you
+					set
+					<code>window.prismAutoloadURL</code> to a string, we will use that, and if you set it to false, we will not set the URL. </p>
 			</div>
 
 		</div>
