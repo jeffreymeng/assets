@@ -1,1 +1,1 @@
-clipboardtooltipper.init(".link");
+clipboardTooltipper.init(".link");
