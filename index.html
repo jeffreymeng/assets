@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Jeffrey Meng">
-    <link rel="stylesheet" type="text/css" href="/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jeffkmeng.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Jeffrey Assets</title>
     <style>
         /* https://stackoverflow.com/a/3525675/5511561 */
@@ -22,29 +22,29 @@
         .container {
             min-height: 100%;
             height: auto !important;
-            margin-bottom: -70px;
+            margin-bottom: -65px;
             /* the bottom margin is the negative value of the footer's total height */
         }
 
         .container:after {
             content: "";
             display: block;
-            height: 70px;
+            height: 65px;
             /* the footer's total height */
         }
 
 
 
         .footer {
-            height: 70px;
+            height: 65px;
             /* the footer's total height */
         }
 
         .footer-content {
 
-            height: 54px;
+            height: 50px;
             /* height + top/bottom paddding + top/bottom border must add up to footer height */
-            padding: 16px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -54,55 +54,171 @@
         <div class="col-lg-12">
             <br>
             <h1>Jeffrey Assets</h1>
-            <p class="text-muted">Resouces that I host. Most are not by me, and are copyrighted to their respective owners.</p>
+            <p class="text-muted">Resources that I host. Most are not by me, and are copyrighted to their respective owners.</p>
             <nav class="breadcrumb">
                 <span class="breadcrumb-item active">Home</span>
             </nav>
+            <hr>
+            <div id="libraries">
 
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Versions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="/library/bootstrap/">Bootstrap</a></td>
-                        <td>CSS framefork</td>
-                        <td><a href="/library/bootstrap/#v4.1.3">4.1.3</a>, <a href="/library/bootstrap/#v4.1.1">4.1.1</a>, <a href="/library/bootstrap/#v4.1.0">4.1.0</a>, <a href="/library/bootstrap/#4.0.0">4.0.0</a>, <a href="/library/bootstrap/#3.3.6">3.3.6</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/library/jquery/">jQuery</a></td>
-                        <td>Javascript Library</td>
-                        <td><a href="/library/jquery/#v3.3.1">3.3.1</a>, <a href="/library/jquery/#migrate-3.0.0">migrate-3.0.0</a>,
-                            <a href="/library/jquery/#v2.2.4">2.2.4</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/library/clipboardjs/">Clipboard.js</a></td>
-                        <td>Javascript Library</td>
-                        <td><a href="/library/clipboardjs/#v1.7.1">1.7.1</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/library/popperjs/">Popper.js</a></td>
-                        <td>Javascript Library</td>
-                        <td><a href="/library/popperjs/#v1.12.6">1.12.6</a></td>
-                    </tr>
+                <input class="fuzzy-search form-control" placeholder="Search" />
+                <br>
+                <div class="btn-group" role="group" aria-label="sort">
+                    <button class="sort btn btn-primary" data-sort="name">
+                        Sort by name
+                    </button>
+                    <button class="sort btn btn-primary" data-sort="type">
+                        Sort by type
+                    </button>
+                </div>
 
-                </tbody>
-            </table>
+                <hr>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-top">
 
+                    </ul>
+                </nav>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Versions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        <tr>
+                            <td>
+                                <a href="/library/bootstrap/" class="name">Bootstrap</a>
+                            </td>
+                            <td class="type">CSS framework</td>
+                            <td>
+                                <a href="/library/bootstrap/#v4.1.3">4.1.3</a>
+                                <a href="/library/bootstrap/#v4.1.1">4.1.1</a>
+                                <a href="/library/bootstrap/#v4.1.0">4.1.0</a>,
+                                <a href="/library/bootstrap/#v4.0.0">4.0.0</a>,
+                                <a href="/library/bootstrap/#v3.3.7">3.3.7</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/library/jquery/" class="name">jQuery</a>
+                            </td>
+                            <td class="type">Javascript Library</td>
+                            <td>
+                                <a href="/library/jquery/#v3.3.1">3.3.1</a>,
+                                <a href="/library/jquery/#migrate-3.0.0">migrate-3.0.0</a>,
+                                <a href="/library/jquery/#v2.2.4">2.2.4</a>
+                            </td>
 
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/library/clipboardjs/" class="name">Clipboard.js</a>
+                            </td>
+                            <td class="type">Javascript Library</td>
+                            <td>
+                                <a href="/library/clipboardjs/#v2.0.0">2.0.0</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/library/popperjs/" class="name">Popper.js</a>
+                            </td>
+                            <td class="type">Javascript Library</td>
+                            <td>
+                                <a href="/library/popperjs/#v1.12.9">1.14.3</a>,
+                                <a href="/library/popperjs/#v1.12.9">1.12.9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/library/zxcvbn/" class="name">ZXCVBN</a>
+                            </td>
+                            <td class="type">Javascript Library</td>
+                            <td>
+                                <a href="/library/zxcvbn/#v4.4.2">4.4.2</a>
+                            </td>
+                        </tr>
 
+                        <tr>
+                            <td>
+                                <a href="/library/list/" class="name">List</a>
+                            </td>
+                            <td class="type">Javascript Library</td>
+                            <td>
+                                <a href="/library/list/#v1.5.0">1.5.0</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/library/prism/" class="name">Prism</a>
+                            </td>
+                            <td class="type">Javascript Library with CSS</td>
+                            <td>
+                                <a href="/library/prism/#v1.13.0">1.13.0</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/library/plyr/" class="name">Plyr</a>
+                            </td>
+                            <td class="type">Javascript Library with CSS and SVG icons</td>
+                            <td>
+                                <a href="/library/plyr/#v3.2.0">3.2.0</a>
+                                <a href="/library/plyr/#v2.0.18">2.0.18</a>
+                            </td>
+                        </tr>
 
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-bottom">
+
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
     <div class="footer">
         <div class="footer-content text-center">
-            Copyright &copy; 2017-2018 Jeffrey Meng<br>
-            Looking for the old(v1) site and old library compatibility? You can find them <a href="/v1/">here</a>.
+            Copyright &copy; 2017-18 Jeffrey Meng
+            <br> Looking for the old(v1) site and old library compatibility? You can find them
+            <a href="/v1/">here</a>.
             <br>
+        </div>
+    </div>
+    <script src="https://cdn.jeffkmeng.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jeffkmeng.com/popperjs/1.12.9/popper.min.js"></script>
+    <script src="https://cdn.jeffkmeng.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jeffkmeng.com/list/1.5.0/list.min.js"></script>
+
+    <script>
+        var perPage = 6;
+        var options = {
+            valueNames: ['name', 'type'],
+            page: perPage,
+            pagination: [{
+                name: "pagination-top",
+                paginationClass: "pagination-top",
+                outerWindow: 2,
+                innerWindow: 2
+            }, {//bottom is longer and more comprehensive
+                paginationClass: "pagination-bottom",
+                outerWindow: 3,
+                innerWindow: 3
+            }]
+
+        };
+
+        var list = new List('libraries', options);
+        function addBootstrapClasses() {
+            $('.pagination li a').addClass('page-link');
+
+        }
+        $(".pagination").bind("DOMNodeInserted", addBootstrapClasses);
+        addBootstrapClasses();
+    </script>
 </body>
 
 </html>
